@@ -1,14 +1,13 @@
-package com.company;
+package com.akammaru;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.concurrent.ThreadPoolExecutor;
 
 public class Keypad {
 
-    private JFrame mainPanel;
+    private JFrame mainFrame;
 
     private CalcController calclogic = new CalcController();
 
@@ -56,12 +55,12 @@ public class Keypad {
      *  setting up ketpad, This will hold all visual elements.
      */
     public Keypad() {
-        mainPanel = new JFrame();
-        mainPanel.setTitle("Calculator");
-        mainPanel.setLayout(new BorderLayout());
+        mainFrame = new JFrame();
+        mainFrame.setTitle("Calculator");
+        mainFrame.setLayout(new BorderLayout());
 
         //setting initial size of screen
-        mainPanel.setSize(500, 330);
+        mainFrame.setSize(500, 330);
 
         //create different pannels
         //output screen
@@ -69,11 +68,11 @@ public class Keypad {
         outputScreen.setPreferredSize(new Dimension(500, 150));
         outputScreen.setLayout(new BoxLayout(outputScreen, BoxLayout.PAGE_AXIS));
         outputScreen.setBackground(Color.magenta);
-        mainPanel.add(outputScreen);
+        mainFrame.add(outputScreen);
         //keypad
         JPanel keyboard = new JPanel();
         keyboard.setPreferredSize(new Dimension(550, 150));
-        mainPanel.add(keyboard);
+        mainFrame.add(keyboard);
 
         //setting up base values for Gridbag layout
         keyboard.setLayout(new GridBagLayout());
@@ -269,6 +268,9 @@ public class Keypad {
                 setViewValues(calclogic.addNumber("3"));
             }
         });
+
+        mainFrame.pack();
+        mainFrame.setVisible(true);
     }
 
 

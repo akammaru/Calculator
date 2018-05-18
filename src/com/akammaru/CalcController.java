@@ -1,4 +1,4 @@
-package com.company;
+package com.akammaru;
 
 /**
  * This class is the controller and only routes through to the logic in the cal model.
